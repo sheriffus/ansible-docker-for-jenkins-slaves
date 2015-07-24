@@ -1,0 +1,38 @@
+- name: Docker is present
+  shell: creates=/usr/bin/docker curl -sSL https://get.docker.com/ | sh
+  tags: [docker]
+
+- name: camaral is a Docker user
+  shell: sudo usermod -aG docker camaral
+  tags: [docker]
+
+
+# - name: Python-dev is present
+#   apt: name=python-dev state=present
+#   tags: [docker]
+
+- name: Python-pip is present
+  apt: name=python-pip state=present
+  tags: [docker]
+
+# - name: Python-pip is current
+#   shell: name=python-pip easy_install --upgrade pip
+#   tags: [docker]
+
+# - name: Requests 2.7.0
+# #  pip: name=requests version=2.7.0
+#   shell: name=requests pip install requests==2.7.0
+#   tags: [docker]
+
+# - name: pyopenssl is present
+#   pip: name=pyopenssl  state=present
+#   tags: [docker]
+
+# - name: pyopenssl is current
+#   shell: name=pyopenssl easy_install --upgrade pyopenssl
+#   tags: [docker]
+
+- name: Docker-py is present
+  # apt: name=python-docker state=present
+  pip: name=docker-py  state=present version=1.1.0
+  tags: [docker]
