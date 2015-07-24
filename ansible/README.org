@@ -1,0 +1,54 @@
+# -*- mode: org -*-
+
+# ####################################################################
+# ####################################################################
+# ##                                                                ##
+# ##  This document is better viewed and edited in emacs' org-mode  ##
+# ##                                                                ##
+# ####################################################################
+# ####################################################################
+
+
+#+TITLE:   A small reference for ansible and docker: seting up jenkins slaves
+#+AUTHOR:  Cláudio Amaral
+#+EMAIL:   claudio.oliveira.amaral@gmail.com
+
+
+* Bootstraping the bootstrap
+
+** Define your structure
+   Each project should have the following roles among their machines:
+   1) One machine to serve as the ansible master
+   2) One machine to run a docker registry to store containers
+   3) Regular docker machines for running the containers
+
+** Describe structure in master 
+   1) Access a console in the machine that is supposed to serve as ansible master
+   2) Open the file */etc/ansible/hosts* 
+      - insert machines for said kinds
+*e.g.*
+[jenkins-slaves]
+mac-x[1:3].jenskins.slave
+[docker-registry]
+mac-x1.jenskins.slave
+   3) Make sure the master has access to its slaves (ssh)
+   4) Change directory (cd) to this document's directory
+   5) Set-up all slaves 
+      - ansible-playbook jenkins-slave.yml --ask-sudo-pass
+      - ansible-playbook docker-registry.yml --ask-sudo-pass
+      - 
+   6) 
+   7) 
+
+
+* wwwwwwwwwww
+** wwwwwwwwww
+*** wwwwwwwww
+**** wwwwwwww
+***** wwwwwww
+****** wwwwww
+******* wwwww
+******** wwww
+********* www
+********** ww
+*********** w
