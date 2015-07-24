@@ -1,0 +1,5 @@
+- hosts: jenkins-slaves
+  remote_user: jenkins
+  sudo: yes
+  roles:
+    - docker
